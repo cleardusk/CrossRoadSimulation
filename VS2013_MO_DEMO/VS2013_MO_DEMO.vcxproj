@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{70D0CC1C-7CB8-4342-BD1C-6C3C488BB69C}</ProjectGuid>
+    <RootNamespace>VS2013_MO_DEMO</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+    <ProjectName>TRANS_SIMU</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v120</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+    <UseOfMfc>Dynamic</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+    <Midl>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>true</ValidateAllParameters>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </Midl>
+    <ResourceCompile>
+      <Culture>0x0409</Culture>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="MO Commons\font.h" />
+    <ClInclude Include="MO Commons\map.h" />
+    <ClInclude Include="MO Commons\MapHelper.h" />
+    <ClInclude Include="MO Commons\MapObjects2.h" />
+    <ClInclude Include="MO Commons\moaddresslocation.h" />
+    <ClInclude Include="MO Commons\mochartrenderer.h" />
+    <ClInclude Include="MO Commons\moclassbreaksrenderer.h" />
+    <ClInclude Include="MO Commons\modataconnection.h" />
+    <ClInclude Include="MO Commons\modatum.h" />
+    <ClInclude Include="MO Commons\modotdensityrenderer.h" />
+    <ClInclude Include="MO Commons\moellipse.h" />
+    <ClInclude Include="MO Commons\moeventrenderer.h" />
+    <ClInclude Include="MO Commons\mofield.h" />
+    <ClInclude Include="MO Commons\mofields.h" />
+    <ClInclude Include="MO Commons\mogeocoder.h" />
+    <ClInclude Include="MO Commons\mogeocoordsys.h" />
+    <ClInclude Include="MO Commons\mogeodataset.h" />
+    <ClInclude Include="MO Commons\mogeodatasets.h" />
+    <ClInclude Include="MO Commons\mogeoevent.h" />
+    <ClInclude Include="MO Commons\mogeotransformation.h" />
+    <ClInclude Include="MO Commons\mogrouprenderer.h" />
+    <ClInclude Include="MO Commons\moimagelayer.h" />
+    <ClInclude Include="MO Commons\molabelplacer.h" />
+    <ClInclude Include="MO Commons\molabelrenderer.h" />
+    <ClInclude Include="MO Commons\molayers.h" />
+    <ClInclude Include="MO Commons\moline.h" />
+    <ClInclude Include="MO Commons\momaplayer.h" />
+    <ClInclude Include="MO Commons\moparts.h" />
+    <ClInclude Include="MO Commons\moplacelocator.h" />
+    <ClInclude Include="MO Commons\mopoint.h" />
+    <ClInclude Include="MO Commons\mopoints.h" />
+    <ClInclude Include="MO Commons\mopolygon.h" />
+    <ClInclude Include="MO Commons\moprimemeridian.h" />
+    <ClInclude Include="MO Commons\moprojcoordsys.h" />
+    <ClInclude Include="MO Commons\moprojection.h" />
+    <ClInclude Include="MO Commons\morecordset.h" />
+    <ClInclude Include="MO Commons\morectangle.h" />
+    <ClInclude Include="MO Commons\mospheroid.h" />
+    <ClInclude Include="MO Commons\mostandardizer.h" />
+    <ClInclude Include="MO Commons\mostatistics.h" />
+    <ClInclude Include="MO Commons\mostrings.h" />
+    <ClInclude Include="MO Commons\mosymbol.h" />
+    <ClInclude Include="MO Commons\motable.h" />
+    <ClInclude Include="MO Commons\motabledesc.h" />
+    <ClInclude Include="MO Commons\motextsymbol.h" />
+    <ClInclude Include="MO Commons\motrackinglayer.h" />
+    <ClInclude Include="MO Commons\mounit.h" />
+    <ClInclude Include="MO Commons\movaluemaprenderer.h" />
+    <ClInclude Include="MO Commons\mozrenderer.h" />
+    <ClInclude Include="Option.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+    <ClInclude Include="TRANS_SIMU.h" />
+    <ClInclude Include="TRANS_SIMU_DOC.h" />
+    <ClInclude Include="TRANS_SIMU_VIEW.h" />
+    <ClInclude Include="MY_TRANS_SIMU.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="MainFrm.cpp" />
+    <ClCompile Include="MO Commons\font.cpp" />
+    <ClCompile Include="MO Commons\map.cpp" />
+    <ClCompile Include="MO Commons\MapHelper.cpp" />
+    <ClCompile Include="MO Commons\moaddresslocation.cpp" />
+    <ClCompile Include="MO Commons\mochartrenderer.cpp" />
+    <ClCompile Include="MO Commons\moclassbreaksrenderer.cpp" />
+    <ClCompile Include="MO Commons\modataconnection.cpp" />
+    <ClCompile Include="MO Commons\modatum.cpp" />
+    <ClCompile Include="MO Commons\modotdensityrenderer.cpp" />
+    <ClCompile Include="MO Commons\moellipse.cpp" />
+    <ClCompile Include="MO Commons\moeventrenderer.cpp" />
+    <ClCompile Include="MO Commons\mofield.cpp" />
+    <ClCompile Include="MO Commons\mofields.cpp" />
+    <ClCompile Include="MO Commons\mogeocoder.cpp" />
+    <ClCompile Include="MO Commons\mogeocoordsys.cpp" />
+    <ClCompile Include="MO Commons\mogeodataset.cpp" />
+    <ClCompile Include="MO Commons\mogeodatasets.cpp" />
+    <ClCompile Include="MO Commons\mogeoevent.cpp" />
+    <ClCompile Include="MO Commons\mogeotransformation.cpp" />
+    <ClCompile Include="MO Commons\mogrouprenderer.cpp" />
+    <ClCompile Include="MO Commons\moimagelayer.cpp" />
+    <ClCompile Include="MO Commons\molabelplacer.cpp" />
+    <ClCompile Include="MO Commons\molabelrenderer.cpp" />
+    <ClCompile Include="MO Commons\molayers.cpp" />
+    <ClCompile Include="MO Commons\moline.cpp" />
+    <ClCompile Include="MO Commons\momaplayer.cpp" />
+    <ClCompile Include="MO Commons\moparts.cpp" />
+    <ClCompile Include="MO Commons\moplacelocator.cpp" />
+    <ClCompile Include="MO Commons\mopoint.cpp" />
+    <ClCompile Include="MO Commons\mopoints.cpp" />
+    <ClCompile Include="MO Commons\mopolygon.cpp" />
+    <ClCompile Include="MO Commons\moprimemeridian.cpp" />
+    <ClCompile Include="MO Commons\moprojcoordsys.cpp" />
+    <ClCompile Include="MO Commons\moprojection.cpp" />
+    <ClCompile Include="MO Commons\morecordset.cpp" />
+    <ClCompile Include="MO Commons\morectangle.cpp" />
+    <ClCompile Include="MO Commons\mospheroid.cpp" />
+    <ClCompile Include="MO Commons\mostandardizer.cpp" />
+    <ClCompile Include="MO Commons\mostatistics.cpp" />
+    <ClCompile Include="MO Commons\mostrings.cpp" />
+    <ClCompile Include="MO Commons\mosymbol.cpp" />
+    <ClCompile Include="MO Commons\motable.cpp" />
+    <ClCompile Include="MO Commons\motabledesc.cpp" />
+    <ClCompile Include="MO Commons\motextsymbol.cpp" />
+    <ClCompile Include="MO Commons\motrackinglayer.cpp" />
+    <ClCompile Include="MO Commons\mounit.cpp" />
+    <ClCompile Include="MO Commons\movaluemaprenderer.cpp" />
+    <ClCompile Include="MO Commons\mozrenderer.cpp" />
+    <ClCompile Include="Option.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TRANS_SIMU.cpp" />
+    <ClCompile Include="TRANS_SIMU_DOC.cpp" />
+    <ClCompile Include="TRANS_SIMU_VIEW.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VS2013_MO_DEMO.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\VS2013_MO_DEMO.rc2" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="res\full extent.bmp" />
+    <Image Include="res\pan.bmp" />
+    <Image Include="res\Toolbar.bmp" />
+    <Image Include="res\VS2013_MO_DEMO.ico" />
+    <Image Include="res\VS2013_MO_DEMODoc.ico" />
+    <Image Include="res\zoom in.bmp" />
+    <Image Include="res\zoom out.bmp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties _x007B_9BD6A64B-CE75-11D1-AF04-204C4F4F5020_x007D_="CMap1" RESOURCE_FILE="VS2013_MO_DEMO.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>
