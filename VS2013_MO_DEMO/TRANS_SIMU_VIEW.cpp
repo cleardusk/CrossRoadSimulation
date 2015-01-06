@@ -226,6 +226,11 @@ void CTRANS_SIMU_VIEW::OnBackMenu()
 		stkAft.push(stkPre.top());
 		stkPre.pop();
 		m_map.SetExtent(stkPre.top());
+
+		double tmp = m_map.GetFullExtent().GetHeight() /
+			m_map.GetExtent().GetHeight();
+		AdjustSymbolSize(tmp);
+		m_map.Refresh();
 	}
 }
 
@@ -235,6 +240,11 @@ void CTRANS_SIMU_VIEW::OnAfterMenu()
 		stkPre.push(stkAft.top());
 		m_map.SetExtent(stkAft.top());
 		stkAft.pop();
+
+		double tmp = m_map.GetFullExtent().GetHeight() /
+			m_map.GetExtent().GetHeight();
+		AdjustSymbolSize(tmp);
+		m_map.Refresh();
 	}
 }
 
@@ -261,15 +271,15 @@ CTRANS_SIMU_VIEW::CTRANS_SIMU_VIEW()
 	m_OptSet.rd_arc = m_OptSet.rd_sidwk_wid;
 
 	// 车
-	m_OptSet.car_speed = 30;
+	m_OptSet.car_speed = 60;
 	m_OptSet.car_size = 25;
 	
 	// 行人
-	m_OptSet.per_speed = 3;
+	m_OptSet.per_speed = 5;
 	m_OptSet.per_size = 3;
 
 	// 投放周期
-	m_OptSet.car_elapse_circle = 200;
+	m_OptSet.car_elapse_circle = 100;
 	m_OptSet.per_elapse_circle = 200;
 
 	// 投放模式
@@ -281,7 +291,7 @@ CTRANS_SIMU_VIEW::CTRANS_SIMU_VIEW()
 
 	// 其它参数
 	m_OptSet.light_circle = 10000;
-	m_OptSet.car_ref = 40;
+	m_OptSet.car_ref = 30;
 	m_OptSet.per_ref = 60;
 	m_OptSet.light_ref = 200;
 	m_OptSet.buf = 5;
@@ -1278,15 +1288,15 @@ void CTRANS_SIMU_VIEW::OnTimer(UINT_PTR nIDEvent)
 	{
 	case 1: // 灯
 	{
-				m_Sta.time_left += m_OptSet.light_ref;
+				m_Sta.time_run += m_OptSet.light_ref;
 				// 当前相位
-				int op = int(m_Sta.time_left) / m_OptSet.light_circle;
+				int op = int(m_Sta.time_run) / m_OptSet.light_circle;
 				//// 之前相位
 				//int opPre = int(TIME_LIGHT - CIRCLE_LIGHT_REF) / CIRCLE_LIGHT;
 				//if ((op - opPre) == 1)
 				//	TIME_LIGHT_LEFT = CIRCLE_LIGHT / 1000;
 
-				m_Sta.time_left = UINT((m_OptSet.light_circle - (m_Sta.time_left - int(m_Sta.time_left / m_OptSet.light_circle)*m_OptSet.light_circle)) / 1000.0);
+				m_Sta.time_left = UINT((m_OptSet.light_circle - (m_Sta.time_run - int(m_Sta.time_run / m_OptSet.light_circle)*m_OptSet.light_circle)) / 1000.0);
 				
 				switch (op % 4)
 				{
@@ -1772,3 +1782,4 @@ void CTRANS_SIMU_VIEW::Clear()
 		m_Sta.totalEvtNum = 0;
 	}
 }
+
