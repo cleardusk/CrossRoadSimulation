@@ -1710,6 +1710,7 @@ void CTRANS_SIMU_VIEW::OnCrossrdsimuOption()
 
 		m_OptSet.bak_clr = RGB(optDlg.m_bakClrR, optDlg.m_bakClrG, optDlg.m_bakClrB);
 		m_OptSet.per_clr = RGB(optDlg.m_perClrR, optDlg.m_perClrG, optDlg.m_perClrB);
+		//m_OptSet.per_clr = optDlg.m_perClrR + optDlg.m_perClrG * 256, optDlg.m_perClrB * 256 * 256; // for static lib 
 		m_OptSet.generate_num = optDlg.m_GenetatrNum;
 
 		m_OptSet.light_circle = optDlg.m_lightCircle*1000; // s->ms
@@ -1738,6 +1739,7 @@ void CTRANS_SIMU_VIEW::OnCrossrdsimuOption()
 			KillTimer(7);
 		}
 		m_map.SetBackColor(m_OptSet.bak_clr);
+		InitTrackingLayerAndData();
 	}
 	else if (m_flagOpt == TRUE){
 		OnCrossrdsimuStart();
