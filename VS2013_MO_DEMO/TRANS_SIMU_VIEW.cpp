@@ -169,6 +169,10 @@ void CTRANS_SIMU_VIEW::MouseDownMap1(short Button, short Shift, long X, long Y)
 
 						  // 存放操作信息到栈
 						  stkPre.push(m_map.GetExtent());
+
+						  // 清除后视图的内容
+						  while (!stkAft.empty())	
+							  stkAft.pop();
 						  break;
 	}
 	case ID_MAP_ZOOMOUT:
@@ -183,6 +187,10 @@ void CTRANS_SIMU_VIEW::MouseDownMap1(short Button, short Shift, long X, long Y)
 #endif
 						   // 存放操作信息到栈
 						   stkPre.push(m_map.GetExtent());
+
+						   // 清除后视图的内容
+						   while (!stkAft.empty())
+							   stkAft.pop();
 						   break;
 	}
 	case ID_MAP_PAN:
@@ -192,6 +200,10 @@ void CTRANS_SIMU_VIEW::MouseDownMap1(short Button, short Shift, long X, long Y)
 
 					   // 存放操作信息到栈
 					   stkPre.push(m_map.GetExtent());
+
+					   // 清除后视图的内容
+					   while (!stkAft.empty())
+						   stkAft.pop();
 					   break;
 	}
 	default:
@@ -208,6 +220,10 @@ void CTRANS_SIMU_VIEW::OnMapTool(UINT nID)
 	{
 		stkPre.push(m_map.GetExtent());
 		m_map.SetExtent(m_map.GetFullExtent());
+
+		while (!stkAft.empty())	// 清除后视图的内容
+			stkAft.pop();
+		
 #ifdef ADJUST_SYMBOL_TEST
 		AdjustSymbolSize(1.0);
 #endif
@@ -613,6 +629,7 @@ BOOL CTRANS_SIMU_VIEW::CreateRoad()
 		layers.Add(m_layer[i]);
 	m_map.SetBackColor(m_OptSet.bak_clr);
 	m_map.Refresh();
+	stkPre.push(m_map.GetExtent());
 
 	return TRUE;
 }
